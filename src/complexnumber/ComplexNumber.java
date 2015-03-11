@@ -256,8 +256,22 @@ public class ComplexNumber {
 		 * una ridefinizione di un metodo della classe base. In questo modo, eventuali errori
 		 * nel nome e/o nei parametri sarebbero prontamente segnalati.
 		 */
+		return toString(this.format);
+	}
+	
+	/**
+	 * Returns the string representation of the object, according to the specified format.
+	 * @param format
+	 * @return
+	 */
+	public String toString(StringFormat format) {
+		/*
+		 * Questo metodo non è la ridefinizione del metodo Object.toString(), poiché
+		 * quest'ultimo non ha alcun parametro. Si tratta, quindi, di un metodo differente,
+		 * in eventuale sovraccarico del metodo toString() ridefinito.
+		 */
 		String r = new String();
-		switch(this.format) {
+		switch(format) {
 		case RECTANGULAR:
 			r = this.re + "+(" + this.im + ")i";
 			break;
